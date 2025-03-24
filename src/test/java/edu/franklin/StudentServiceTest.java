@@ -18,22 +18,21 @@ public class StudentServiceTest {
     @Test
     void testAddAndGetStudent() {
         Student student = Student.newBuilder()
-                .setId("123")
                 .setName("John Doe")
                 .setPhone("555-1234")
                 .setAge("20")
-                .setCoach("Coach Smith")
+                .setZip("12345")
                 .build();
 
         StudentID studentID = studentService.addStudent(student);
-        assertEquals("123", studentID.getValue());
+        assertEquals("1", studentID.getValue());
 
         Student retrievedStudent = studentService.getStudent(StudentID.newBuilder().setValue("123").build());
         assertNotNull(retrievedStudent);
         assertEquals("John Doe", retrievedStudent.getName());
         assertEquals("555-1234", retrievedStudent.getPhone());
         assertEquals("20", retrievedStudent.getAge());
-        assertEquals("Coach Smith", retrievedStudent.getCoach());
+        assertEquals("C12345", retrievedStudent.getZip());
     }
 
     @Test

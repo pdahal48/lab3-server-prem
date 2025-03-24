@@ -10,7 +10,7 @@ message Student {
   string name = 2;
   string phone = 3;
   string age = 4;
-  string coach = 5;
+  string zip = 5;
 }
 
 message StudentID {
